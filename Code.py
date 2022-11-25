@@ -1,5 +1,5 @@
-1. Load and normalize CIFAR10
-Using torchvision, it’s extremely easy to load CIFAR10.
+#1. Load and normalize CIFAR10
+#Using torchvision, it’s extremely easy to load CIFAR10.
 
 import torch
 import torchvision
@@ -48,7 +48,7 @@ imshow(torchvision.utils.make_grid(images))
 # print labels
 print(' '.join(f'{classes[labels[j]]:5s}' for j in range(batch_size)))
 
-2. Define a Convolutional Neural Network
+#2. Define a Convolutional Neural Network
 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -92,16 +92,16 @@ class Net(nn.Module):
 
 net = Net()
 
-3. Define a Loss function and optimizer
-Let's use a Classification Cross-Entropy loss and SGD with momentum.
+#3. Define a Loss function and optimizer
+#Let's use a Classification Cross-Entropy loss and SGD with momentum.
 
 import torch.optim as optim
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.5)
 
-4. Train the network
-This is when things start to get interesting. We simply have to loop over our data iterator, and feed the inputs to the network and optimize.
+#4. Train the network
+#This is when things start to get interesting. We simply have to loop over our data iterator, and feed the inputs to the network and optimize.
 
 for epoch in range(12):  # loop over the dataset multiple times
 
@@ -132,10 +132,10 @@ print('Finished Training')
 PATH = './cifar_net.pth'
 torch.save(net.state_dict(), PATH)
 
-5. Test the network on the test data
-We have trained the network for 2 passes over the training dataset. But we need to check if the network has learnt anything at all.
+#5. Test the network on the test data
+#We have trained the network for 2 passes over the training dataset. But we need to check if the network has learnt anything at all.
 
-We will check this by predicting the class label that the neural network outputs, and checking it against the ground-truth. If the prediction is correct, we add the sample to the list of correct predictions.
+#We will check this by predicting the class label that the neural network outputs, and checking it against the ground-truth. If the prediction is correct, we add the sample to the list of correct predictions.
 
 dataiter = iter(testloader)
 images, labels = next(dataiter)
