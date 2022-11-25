@@ -3,7 +3,7 @@ Experimenting several ways to improve the accuracy of the CNN using CIFAR datase
 
 Modifying the existing code given at - https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html
 
-1 - Running the training longer
+1 - Running the training longer: 
 Before the for loop runs for 2 loops. Increasing the for loop for 12 loops increases the accuracy to
 60% and the loss decreased from 1.7 to 0.7. But the loss also increases in the middle and then again 
 decreases. Increasing the for loop iterations to 22 loops, there is no change in accuracy. The 
@@ -16,7 +16,7 @@ underfitting to optimal to overfit after some time. As we can see above, the mod
 60% but stays constant at 60% when you from 12 to 22 loops. And we should train the model longer 
 only when we have a huge amount of data. 
 
-2 - Changing the learning rate and other hyperparameters
+2 - Changing the learning rate and other hyperparameters: 
 When we change the learning rate to 0.01 and keeping the momentum same, the accuracy 
 decreases drastically to 10% It is the same when we make the learning rate 0.00001, the accuracy is 
 11% Here the loss decreases and immediately keeps on increasing. When we decrease the learning 
@@ -29,20 +29,20 @@ our case we can see that at first only cat has an accuracy of 95%, at second onl
 of 94% A medium range momentum and a small learning rate gives somewhat better accuracy 
 (around 50%). 
 
-3 - Change the number or sizes of the fully connected layers
+3 - Change the number or sizes of the fully connected layers:
 When we change the number of the fully connected layers to 4, the accuracy decreases from 54% to 
 47% and when we change the number of fully connected layers to 5 the accuracy increases back to 
 54% Changing the number of fully connected layers to 10, the accuracy increases a little, it becomes 
 56% Thus increasing the number of the fully connected layers, increases the accuracy of the model 
 because as we increase the layers, the feature extraction becomes more specific.
 
-4 – Nonlinear function other than ReLU
+4 – Nonlinear function other than ReLU:
 Using ReLU we got the model accuracy as 54% and using tanh as the activation function, the model 
 accuracy is 55% and with sigmoid it is 10% The model performs the worst with sigmoid activation as 
 it just learns to classify a single class, giving us the accuracy of class bird as 100% Thus we can 
 observe that ReLU is the better option to choose as an activation function.
 
-5 – Adding a dropout layer
+5 – Adding a dropout layer:
 Adding a dropout layer, the accuracy of the model remains constant at 54% The accuracy of the 
 model does not increase because our model is not overfitting. It has yet to reach the optimal stage. 
 Thus adding a dropout layer does not help in increasing the accuracy of the model. 
