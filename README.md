@@ -1,4 +1,4 @@
-# Experimenting with several ways to improve the accuracy of the (CNN) using the CIFAR dataset. 
+# Experimenting ways to improve the accuracy of the Convolutional Neural Network(CNN) using the CIFAR dataset. 
 
 Modifying the existing code given at - https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html
 
